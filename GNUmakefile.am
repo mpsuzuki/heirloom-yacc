@@ -1,0 +1,15 @@
+bin_PROGRAMS = yacc
+noinst_LIBRARIES = liby.a
+EXTRA_DIST = yacc.1 yaccpar Makefile.mk
+man1_MANS = yacc.1
+PARSER_PATH = @PARSER_PATH@
+
+CFLAGS = @AC_CFLAGS@ -D_GNU_SOURCE -DPARSER='"@PARSER_PATH@"'
+
+liby_a_SOURCES = libmai.c libzer.c
+yacc_SOURCES = dextern sgs.h y1.c y2.c y3.c y4.c y5.c getopt.c
+yacc_LIBS = -L$(builddir) -ly
+
+install-data-local:
+	$(MKDIR_P) $(DESTDIR)/$(PARSER_PATH)/
+	$(INSTALL_DATA) yaccpar $(DESTDIR)/$(PARSER_PATH)/
