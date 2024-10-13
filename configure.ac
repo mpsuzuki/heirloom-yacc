@@ -1,5 +1,5 @@
 AC_PREREQ([2.62])
-AC_INIT([heirloom-yacc], [0.0.20240915], [https://gitlab.com/mpsuzuki/heirloom-yacc/-/issues])
+AC_INIT([heirloom-yacc], [0.0.20240915], [https://github.com/mpsuzuki/heirloom-yacc/-/issues])
 AM_INIT_AUTOMAKE([foreign])
 
 # Set default prefix
